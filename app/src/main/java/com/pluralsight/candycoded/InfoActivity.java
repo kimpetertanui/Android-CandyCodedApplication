@@ -12,7 +12,7 @@ import com.squareup.picasso.Picasso;
 
 public class InfoActivity extends AppCompatActivity {
 
-   Uri Uri;
+   Uri Uri,URI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +45,12 @@ public class InfoActivity extends AppCompatActivity {
             startActivity(mapIntent);
         }
 
+    }
+
+    public void createPhoneIntent(View view){
+        Intent intent=new Intent(Intent.ACTION_DIAL);
+        URI=Uri.parse("tel:0123456789");
+        intent.setData(URI);
+        startActivity(intent);
     }
 }
